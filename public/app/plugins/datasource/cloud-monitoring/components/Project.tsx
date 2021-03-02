@@ -24,7 +24,8 @@ export function Project({ projectName, datasource, onChange, templateVariableOpt
               options: templateVariableOptions,
             },
             ...projects,
-          ])
+          ]).sort((p1, p2) =>
+            p1.projectName.localeCompare(p2.projectName), undefined, { sensitivity: 'accent' })
         }
         value={projectName}
         placeholder="Select Project"
